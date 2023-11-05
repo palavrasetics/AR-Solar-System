@@ -2,21 +2,17 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <title>Cientista por um Dia - Sistema Solar em RA</title>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.min.js"></script>
   </head>
   <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='trackingMethod: best;'>
+    <a-scene embedded arjs='trackingMethod: "best"; sourceType: webcam; debugUIEnabled: false;'>
       
-      <!-- Definindo a Luz do Sol -->
-      <a-entity light="type: point; color: #fff; intensity: 2" position="0 0 0"></a-entity>
+      <!-- Modelo do Sol, posicionado arbitrariamente -->
+      <a-entity gps-entity-place="latitude: 38.138318; longitude: -7.445478;"
+                gltf-model="url(./scene.gltf)"></a-entity>
       
-      <!-- Modelos dos Planetas (Substitua 'your_model_url' pelo caminho dos seus modelos 3D) -->
-      <!-- Exemplo para a Terra -->
-      <a-entity gltf-model="url(./scene.gltf)" position="0 0 -3" scale="0.1 0.1 0.1" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
+      <a-entity camera></a-entity>
       
-      <!-- Repita para os outros planetas -->
-
     </a-scene>
   </body>
 </html>
