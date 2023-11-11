@@ -56,23 +56,27 @@
 
     </a-scene>
 
-    <script>
-        document.getElementById('zoomIn').addEventListener('click', function () {
-            var solarSystem = document.getElementById('solarSystem');
-            var scale = solarSystem.getAttribute('scale');
-            scale.x += 0.1;
-            scale.y += 0.1;
-            scale.z += 0.1;
-            solarSystem.setAttribute('scale', scale);
-        });
+   <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('zoomIn').addEventListener('click', function () {
+                var solarSystem = document.getElementById('solarSystem');
+                var scale = solarSystem.getAttribute('scale');
+                scale.x += 0.1;
+                scale.y += 0.1;
+                scale.z += 0.1;
+                solarSystem.setAttribute('scale', scale);
+            });
 
-        document.getElementById('zoomOut').addEventListener('click', function () {
-            var solarSystem = document.getElementById('solarSystem');
-            var scale = solarSystem.getAttribute('scale');
-            scale.x -= 0.1;
-            scale.y -= 0.1;
-            scale.z -= 0.1;
-            solarSystem.setAttribute('scale', scale);
+            document.getElementById('zoomOut').addEventListener('click', function () {
+                var solarSystem = document.getElementById('solarSystem');
+                var scale = solarSystem.getAttribute('scale');
+                if (scale.x > 0.1 && scale.y > 0.1 && scale.z > 0.1) { // Impedir escala negativa
+                    scale.x -= 0.1;
+                    scale.y -= 0.1;
+                    scale.z -= 0.1;
+                    solarSystem.setAttribute('scale', scale);
+                }
+            });
         });
     </script>
     
