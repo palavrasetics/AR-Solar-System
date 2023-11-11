@@ -33,6 +33,15 @@
             position="posicao_inicial_aleatoria()"
             animation="property: position; to: posicao_final_aleatoria(); dur: 10000; easing: linear; loop: true">
   </a-entity>
+
+<!-- Meteoro (você repetiria essa entidade para criar múltiplos meteoros) -->
+  <a-entity id="meteoro0" 
+            geometry="primitive: sphere; radius: 0.05" 
+            material="color: yellow; emissive: red"
+            position="calcula_posicao_aleatoria()" 
+            animation="property: position; to: 0 0 -3; dur: 10000; easing: linear; loop: false">
+  </a-entity>
+
     </a-scene>
   </body>
 </html>
