@@ -24,24 +24,23 @@
     var radius = 5; // Ajuste conforme necessário
 
     // Gere um ângulo aleatório
-    var angle = Math.random() * 2 * Math.PI; // Ângulo em radianos
+    var angle = Math.random() * 2 * Math.PI;
 
-    // Calcule a posição x e z baseada no ângulo (y é mantido constante por simplicidade)
+    // Calcule a posição x e z baseada no ângulo
     var x = radius * Math.cos(angle);
-    var z = radius * Math.sin(angle);
+    var z = radius * Math.sin(angle) - 8; // Ajuste baseado na posição do Sol
 
     // Retorne a posição inicial
     return x + " 1 " + z; // Ajuste a coordenada 'y' conforme necessário
   }
 
   function randomEndPosition() {
-    // Pode usar a mesma lógica da função randomStartPosition, mas com um novo ângulo
-    // para criar uma posição final diferente.
+    // Mesma lógica da função randomStartPosition, mas com um novo ângulo
     var radius = 5; 
     var angle = Math.random() * 2 * Math.PI;
 
     var x = radius * Math.cos(angle);
-    var z = radius * Math.sin(angle);
+    var z = radius * Math.sin(angle) - 8;
 
     return x + " 1 " + z;
   }
@@ -71,13 +70,12 @@
             animation="property: position; to: 0 0 -8; dur: 10000; easing: linear; loop: false">
   </a-entity>
 
-<a-entity id="meteoro2"
-            geometry="primitive: sphere; radius: 0.05"
-            material="color: yellow; emissive: red"
-            position="randomStartPosition()"
-            animation__orbit="property: position; to: randomEndPosition(); dur: 10000; easing: linear; loop: true"
-            animation__rotation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
-  </a-entity>
+<a-entity id="meteoro0"
+          geometry="primitive: sphere; radius: 0.05"
+          material="color: yellow; emissive: red"
+          position="randomStartPosition()"
+          animation__orbit="property: position; to: randomEndPosition(); dur: 10000; easing: linear; loop: true">
+</a-entity>
       
     </a-scene>
   </body>
