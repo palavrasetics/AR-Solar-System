@@ -6,6 +6,11 @@
     <title>Sistema Solar em RA</title>
   </head>
   <body style='margin : 0px; overflow: hidden;'>
+
+    <!-- Botões para Zoom -->
+    <button id="zoomIn" style="position: absolute; z-index: 1; top: 10px; left: 10px;">Zoom In</button>
+    <button id="zoomOut" style="position: absolute; z-index: 1; top: 10px; left: 100px;">Zoom Out</button>
+    
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
 
       <!-- Sol -->
@@ -50,5 +55,26 @@
       <!-- Adicione mais planetas conforme necessário -->
 
     </a-scene>
+
+    <script>
+        document.getElementById('zoomIn').addEventListener('click', function () {
+            var solarSystem = document.getElementById('solarSystem');
+            var scale = solarSystem.getAttribute('scale');
+            scale.x += 0.1;
+            scale.y += 0.1;
+            scale.z += 0.1;
+            solarSystem.setAttribute('scale', scale);
+        });
+
+        document.getElementById('zoomOut').addEventListener('click', function () {
+            var solarSystem = document.getElementById('solarSystem');
+            var scale = solarSystem.getAttribute('scale');
+            scale.x -= 0.1;
+            scale.y -= 0.1;
+            scale.z -= 0.1;
+            solarSystem.setAttribute('scale', scale);
+        });
+    </script>
+    
   </body>
 </html>
