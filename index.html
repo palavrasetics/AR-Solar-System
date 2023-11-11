@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <title>Sistema Solar em RA</title>
+  </head>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+
+      <!-- Sol -->
+      <a-entity geometry="primitive: sphere; radius: 0.5" 
+                material="color: yellow" 
+                position="0 0 -5">
+      </a-entity>
+
+      <!-- Planetas: Cada planeta é uma entidade com sua própria órbita -->
+      <!-- Mercúrio -->
+      <a-entity geometry="primitive: sphere; radius: 0.05" 
+                material="color: gray" 
+                position="0.6 0 -5" 
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
+      </a-entity>
+
+      <!-- Vênus -->
+      <a-entity geometry="primitive: sphere; radius: 0.1" 
+                material="color: orange" 
+                position="0.9 0 -5" 
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 7000; easing: linear">
+      </a-entity>
+
+      <!-- Terra -->
+      <a-entity geometry="primitive: sphere; radius: 0.1" 
+                material="color: blue" 
+                position="1.2 0 -5" 
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
+      </a-entity>
+
+      <!-- Marte -->
+      <a-entity geometry="primitive: sphere; radius: 0.08" 
+                material="color: red" 
+                position="1.5 0 -5" 
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear">
+      </a-entity>
+
+      <!-- Adicione mais planetas conforme necessário -->
+
+    </a-scene>
+  </body>
+</html>
