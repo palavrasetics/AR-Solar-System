@@ -11,36 +11,36 @@
       <!-- Sol -->
       <a-entity geometry="primitive: sphere; radius: 0.5" 
                 material="color: yellow" 
-                position="0 0 -5">
+                position="0 0 -10">
       </a-entity>
 
-      <!-- Planetas: Cada planeta é uma entidade com sua própria órbita -->
+      <!-- Planetas -->
       <!-- Mercúrio -->
       <a-entity geometry="primitive: sphere; radius: 0.05" 
                 material="color: gray" 
-                position="0.6 0 -5" 
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
+                position="0.6 0 -10" 
+                animation="property: object3D.position.y; to: 5; dir: alternate; dur: 2000; loop: true; easing: easeInOutSine">
       </a-entity>
 
       <!-- Vênus -->
       <a-entity geometry="primitive: sphere; radius: 0.1" 
                 material="color: orange" 
-                position="0.9 0 -5" 
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 7000; easing: linear">
+                position="0.9 0 -10" 
+                animation="property: object3D.position.y; to: 5; dir: alternate; dur: 3000; loop: true; easing: easeInOutSine">
       </a-entity>
 
       <!-- Terra -->
       <a-entity geometry="primitive: sphere; radius: 0.1" 
                 material="color: blue" 
-                position="1.2 0 -5" 
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
+                position="1.2 0 -10" 
+                animation="property: object3D.position.y; to: 5; dir: alternate; dur: 4000; loop: true; easing: easeInOutSine">
       </a-entity>
 
       <!-- Marte -->
       <a-entity geometry="primitive: sphere; radius: 0.08" 
                 material="color: red" 
-                position="1.5 0 -5" 
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear">
+                position="1.5 0 -10" 
+                animation="property: object3D.position.y; to: 5; dir: alternate; dur: 5000; loop: true; easing: easeInOutSine">
       </a-entity>
 
       <!-- Adicione mais planetas conforme necessário -->
